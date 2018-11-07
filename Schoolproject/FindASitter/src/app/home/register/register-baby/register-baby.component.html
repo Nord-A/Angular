@@ -1,0 +1,95 @@
+
+<h2>Register your baby</h2> 
+
+<form novalidate [formGroup]="babyForm" (ngSubmit)= "onSubmit(babyForm)">
+  <mat-form-field class="example-full-width">
+    <input matInput type="text" placeholder="Name" formControlName="name">
+</mat-form-field>
+<br/>
+
+<mat-form-field>
+  <mat-select formControlName="gender" placeholder="Gender">
+    <mat-option *ngFor="let Babygender of baby" [value]="Babygender.value">
+      {{Babygender.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<br/>
+
+<mat-form-field>
+  <input formControlName="date" matInput [matDatepicker]="picker" placeholder="Date of birth">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+<br/>
+
+  <mat-form-field class="example-full-width">
+    <input matInput type="text" placeholder="Any Special Needs" formControlName="specialNeeds">
+</mat-form-field>
+<br/>
+
+
+  <mat-form-field class="example-full-width">
+    <input matInput type="text" placeholder="Address" formControlName="address">
+</mat-form-field>
+<br/>
+
+
+  <mat-form-field class="example-full-width">
+    <input matInput type="text" placeholder="Zip Code" formControlName="zipCode">
+</mat-form-field>
+<br/>
+
+
+  <mat-form-field class="example-full-width">
+    <input matInput type="text" placeholder="City" formControlName="city">
+</mat-form-field>
+<br/>
+
+<mat-form-field class="example-full-width">
+  <input matInput type="text" placeholder="Username" formControlName="userName">
+</mat-form-field>
+<br/>
+
+<mat-form-field class="example-full-width">
+  <input matInput type="text" placeholder="Password" formControlName="passWord">
+</mat-form-field>
+<br/>
+
+<button routerLink="login">Register</button>
+
+</form>
+
+
+
+
+<!-- <p>
+  Please enter your baby's information below:
+</p>
+
+
+  <label>Name:</label>
+  <input type="text" formControlName="name"> 
+<br/>
+  <label>Gender:</label>
+    <select formControlName="gender"> 
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+    </select>
+<br/>
+  <label>Date of birth:</label>
+  <input type="date" formControlName="date"> 
+<br/>
+  <label>Special Needs:</label>
+  <input type="text" formControlName="specialNeeds">
+<br/>
+  <label>Address::</label>
+  <input type="text" formControlName="address">
+<br/>
+  <label>Zip Code:</label>
+  <input type="text" formControlName="zipCode">
+<br/>
+  <label>City:</label>
+  <input type="text" formControlName="city">
+<br/>
+ -->

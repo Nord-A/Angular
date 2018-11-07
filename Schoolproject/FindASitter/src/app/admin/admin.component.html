@@ -1,0 +1,41 @@
+
+
+<div style="text-align:center">
+  <h3>Admin Login</h3>
+  <form novalidate [formGroup]="loginForm" (ngSubmit)= "onSubmit(loginForm)">
+  
+  
+    <mat-form-field class="example-full-width">
+      <input matInput type="text" placeholder="username" formControlName="username" id="username">
+  </mat-form-field>
+  <br>
+  <div *ngIf= "loginForm.controls.username.touched && loginForm.controls.username.errors?.required">
+    Username must be filled out!
+  </div> 
+  
+   <div *ngIf= "loginForm.controls.username.dirty && loginForm.controls.username.errors?.minlength">
+    Username must be min 5 characters!
+  </div> 
+  
+  <mat-form-field class="example-full-width">
+    <input matInput type="text" placeholder="password" formControlName="password" id="password">
+  </mat-form-field><br>
+  
+  <div *ngIf= "loginForm.controls.password.touched && loginForm.controls.password.errors?.required">
+    Password must be filled out!
+  </div>
+  
+  
+  <!--<mat-checkbox>Check me!</mat-checkbox> Checkbox  -->
+  
+  
+  <br/>
+  
+  <button id="btnlogin" mat-raised-button color="primary">Login</button>
+  
+  
+  
+  </form>
+  
+  </div>
+  

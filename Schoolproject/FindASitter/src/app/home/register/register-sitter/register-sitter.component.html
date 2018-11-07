@@ -1,0 +1,115 @@
+<h2>Register sitter</h2> 
+
+<form novalidate [formGroup]="sitterForm" (ngSubmit)= "onSubmit(sitterForm)">
+  <mat-form-field class="example-full-width">
+    <input id="nameInput" matInput type="text" placeholder="Name" formControlName="name">
+</mat-form-field>
+<br/>
+
+<mat-form-field>
+  <mat-select formControlName="gender" placeholder="Gender">
+    <mat-option *ngFor="let Sittergender of sitter" class="genderInput" [value]="Sittergender.value">
+      {{Sittergender.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<br/>
+
+<mat-form-field>
+  <input id="birthdateInput" formControlName="date" id="birthdateInput" matInput [matDatepicker]="picker" placeholder="Date of birth">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+<br/>
+
+<mat-form-field>
+  <mat-select formControlName="criminalRecord" placeholder="Criminal Record?">
+    <mat-option *ngFor="let Criminalrecord of criminal" class="criminalRecordInput" [value]="Criminalrecord.value">
+      {{Criminalrecord.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<br/>
+
+<mat-form-field>
+  <mat-select formControlName="childRecord" placeholder="Child Criminal Record?">
+    <mat-option *ngFor="let Childrecord of child" class="childRecordInput" [value]="Childrecord.value">
+      {{Childrecord.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<br/>
+
+<mat-form-field class="example-full-width">
+  <input id="wageInput" matInput type="text" formControlName="hourlyWage" id="wageInput" matInput placeholder="Hourly Wage" value="">
+</mat-form-field>
+<br/>
+
+  <mat-form-field class="example-full-width">
+    <input id="addressInput" matInput type="text" placeholder="Address" formControlName="address">
+</mat-form-field>
+<br/>
+
+
+  <mat-form-field class="example-full-width">
+    <input id="zipcodeInput" matInput type="text" placeholder="Zip Code" formControlName="zipCode">
+</mat-form-field>
+<br/>
+
+
+  <mat-form-field class="example-full-width">
+    <input id="cityInput" matInput type="text" placeholder="City" formControlName="city">
+</mat-form-field>
+<br/>
+
+<mat-form-field class="example-full-width">
+  <input id="usernameInput" matInput type="text" placeholder="Username" formControlName="userName">
+</mat-form-field>
+<br/>
+
+<mat-form-field class="example-full-width">
+  <input id="passwordInput" matInput type="text" placeholder="Password" formControlName="passWord">
+</mat-form-field>
+<br/>
+
+<button id="registerSubmit" >Register</button>
+
+</form>
+
+  
+   <!--  <p>
+      Please enter sitters information below:
+    </p>
+    
+  
+      <label>Name:</label>
+      <input type="text" formControlName="name"> 
+    <br/>
+      <label>Gender:</label>
+      <select formControlName="gender"> 
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      </select>
+    <br/>
+      <label>Date of birth:</label>
+      <input type="date" formControlName="date"> 
+    <br/>
+      <label>Criminal record:</label>
+      <input type="boolean" formControlName="criminalRecord">   
+    <br/>
+      <label>Criminal child record:</label> 
+      <input type="boolean" formControlName="childRecord">
+    <br/>
+      <label>Hourly wage:</label>
+      <input type="number" formControlName="hourlyWage">
+    <br/>
+      <label>Address::</label>
+      <input type="text" formControlName="address">
+    <br/>
+      <label>Zip Code:</label>
+      <input type="text" formControlName="zipCode">
+    <br/>
+      <label>City:</label>
+      <input type="text" formControlName="city">
+      <br/>
+       -->

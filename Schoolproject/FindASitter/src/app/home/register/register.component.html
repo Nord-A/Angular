@@ -1,0 +1,20 @@
+<div style="text-align:center">
+
+
+<h1>Register</h1>
+  
+  <button id="menuRegisterSitter" routerLink="registersitter" (click)="onClickSitter">Register Sitter</button>
+
+  <button routerLink="registerbaby" (click)="onClickBaby()">Register Baby</button>
+
+  <div *ngIf="title === 'Baby'">
+    <app-register-baby></app-register-baby>
+  </div>
+  
+  <div *ngIf="title === 'Sitter'">
+    <app-register-sitter></app-register-sitter>
+  </div>
+
+  <router-outlet></router-outlet>
+
+</div>
